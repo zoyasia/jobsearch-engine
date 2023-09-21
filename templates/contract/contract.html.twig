@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Offres
+{% endblock %}
+
+{% block body %}
+
+<div>
+		<h1>
+			Offres d'emploi en {{}}
+		</h1>
+		{% for job in jobs %}
+			<div class="card">
+				<p>{{ job.name }}</p>
+                <p>Type de contrat: {{ job.contractType.name }}</p>
+                <p>{{ job.jobDescription }}</p>
+                <p>Offre parue le: {{ job.PublicationDate.format('d/m/Y') }}</p>
+                <a href="{{ path('offer_item', { 'id': job.id }) }}">Voir plus</a>
+            </div>
+                
+		{% else %}
+			<div>Aucun article trouvé</div>
+
+			
+		{% endfor %}
+
+{% endblock %}

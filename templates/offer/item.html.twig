@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre d'emploi
+{% endblock %}
+
+{% block body %}
+	<h1>
+		{{offer.name}}</h1>
+	<p>Type de contrat:
+		{{ offer.contractType.name }}</p>
+	<p>{{ offer.jobDescription }}</p>
+	<p>Offre parue le:
+		{{ offer.PublicationDate.format('d/m/Y') }}</p>
+
+
+{% endblock %}
+
